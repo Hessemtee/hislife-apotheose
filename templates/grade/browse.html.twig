@@ -1,0 +1,68 @@
+{% extends 'basedashboard.html.twig' %}
+
+
+{% block body %}
+
+
+
+<section class="light-content our-team">
+{% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <div class="alert-{{ label }} message-flash">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">Bulletin de Note</h2>
+						<a href="{{ path('grade_add') }}" class="large-button green-color">Ajouter</a>
+					</div>
+					<!-- /.section-header -->
+				</div>
+				<!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+
+		{% for grade in grades %}
+			<div class="photo-card">
+				<div class="photo-background" style="background-image:url('{{asset(grade.file)}}'); "></div>
+				<div class="col-md-6">
+				<div class="project-info"></br>
+				<a href="{{ path('grade_read', {'id': grade.id}) }}">
+					<h3 class="project-title">{{ grade.name }}</h3></br>
+				<span style="color:white;">Appartient à : {{ grade.child }}</span>
+				</br>
+			<span class="date">Posté le:
+				{{grade.createdAt|date('d-m-Y')}}</span>
+		</br>
+	</br>
+	
+				<div class="p-t-10">
+					<a href="{{ path('grade_edit', {'id': grade.id}) }}" class="large-button-blanc white-color">
+						<button class="large-button-blanc white-color" type="submit">Modifier</button>
+					</a>
+
+</div>
+				</div>
+			</div>
+
+		</div>
+	{% endfor %}
+
+
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+

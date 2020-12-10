@@ -1,0 +1,50 @@
+{% extends 'basedashboard.html.twig' %}
+
+{% block body %}
+
+{{ form_start(form) }}
+
+<section class="light-content our-team">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">Messages</h2>
+						
+					</div>
+					<!-- /.section-header -->
+				</div>
+				<!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+
+		<div class="font-poppinsdeux">
+			<div class="wrapper wrapper--w780">
+				<div class="card card-13">
+					<div class="card-heading"></div>
+                    <div class="card-body">
+                    <h2 class="title">Ajout d'un Message</h2>
+						{{ form_start(form) }}
+						{{ form_row(form.title) }}
+                        {{ form_row(form.content) }}
+                        {{ form_row(form.family) }}
+						
+
+
+						<div class="p-t-10">
+							<button class="large-button white-color" type="submit">Valider</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			{{ form_end(form) }}
+		</section>
+
+
+
+{% endblock %}

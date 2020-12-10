@@ -1,0 +1,239 @@
+http://getbootstrap.com/javascript/#modals@import url("https://fonts.googleapis.com/css?family=Roboto:300,500");
+
+
+html {
+  box-sizing: border-box;
+  color: #b9bcbd;
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.description-white {
+  color:white;
+}
+
+.photo-card {
+  background-color: #838bc5;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  font-family: "Raleway", "Arial", "Helvetica Neue", sans-serif;
+}
+@media screen and (min-width: 700px) {
+  .photo-card {
+    flex-direction: row;
+  }
+}
+
+.photo-background {
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  min-height: 250px;
+}
+
+.background-event{
+  padding-bottom: 10px;
+}
+
+.background-event .project-title{
+  text-align: center;
+}
+
+.background-event .button-show-event{
+  
+  text-align: center;
+}
+@media screen and (min-width: 700px) {
+  .photo-background {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    min-height: none;
+    width: 50%;
+  }
+}
+
+.photo-details {
+  padding: 2.1875em 5%;
+  font-family: "Raleway", "Arial", "Helvetica Neue", sans-serif;
+}
+@media screen and (min-width: 700px) {
+  .photo-details {
+    width: 50%;
+  }
+}
+
+.photo-details.boum{
+  width:100%;
+
+}
+
+.photo-details h1,
+.photo-details h4 {
+  color: #fff;
+  font-weight: 500;
+  margin: 0;
+}
+.photo-details h1 {
+  font-size: 125%;
+  line-height: 1;
+  margin-bottom: 0.35em;
+}
+.photo-details h4 {
+  font-size: 62.5%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.photo-details.profile-picture{
+  width: 75%;
+}
+
+.photo-author {
+  color: white;
+  display: block;
+  font-size: 62.5%;
+  text-transform: uppercase;
+}
+
+.photo-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.375em;
+}
+.photo-meta .equipment,
+.photo-meta .resolution {
+  width: 48.75%;
+}
+.photo-meta .equipment ul,
+.photo-meta .resolution ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 87.5%;
+}
+
+.photo-tags ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 87.5%;
+  margin-top: 0.35em;
+  text-transform: lowercase;
+}
+.photo-tags li {
+  margin: 0 0.35em 0.35em 0;
+}
+.photo-tags a {
+  background-color: #191e20;
+  border-radius: 50px;
+  color: #fff;
+  display: block;
+  padding: 0.3125em 1.25em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.photo-tags a:hover, .photo-tags a:focus {
+  color: #e37544;
+}
+
+
+.large-button-blanc {
+  padding: 15px 20px;
+  font-size: 10px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  margin-left: 25px;
+}
+
+button.large-button-blanc.white-color {
+	padding: 15px;
+	width:100px;
+  color: #838bc5;
+  background-color: white;
+  line-height: normal;
+}
+
+/* Bouton dans messages */
+
+button.large-button.purple {
+  padding: 15px;
+  width: 100px;
+  color:white;
+  background-color: #838bc5 ;
+  line-height: normal;
+  float:right;
+}
+
+/* CSS pour la carte Message */
+
+.message {
+  text-align: center;
+}
+
+.message-button {
+  margin: auto;
+}
+.message-background {
+  padding-bottom: 20px;
+}
+
+.last-post.clearfix {
+  width: 100%;
+  
+}
+
+.family-name{
+  color: #65c8d0;
+  font-weight: 900;
+}
+
+.profile{
+  display: flex;
+}
+
+.profile-picture{
+  margin-left: 190px;
+  flex-direction: row-reverse;
+  float: right;
+}
+
+/* list of calendar */
+
+.table{
+  text-align: center;
+ 
+}
+
+.table th{
+  text-align: center;
+  
+}
+
+.add-event {
+  text-align: center;
+  padding-top: 75px;
+}

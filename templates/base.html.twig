@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		<title>
+			{% block title %}His Life
+			{% endblock %}
+		</title>
+	
+	{% block stylesheets %}
+		<!-- Stylesheets -->
+	<link rel="stylesheet" href="../../assets/css/misc.css">
+	<link rel="stylesheet" href="../../assets/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="../../assets/css/blue-scheme.css"> 
+	<link rel="stylesheet" href="../../assets/css/main.css" media="all">
+	
+	<!-- JavaScripts -->
+	<script src="../../assets/js/jquery-1.10.2.min.js"></script>
+	<script src="../../assets/js/jquery-migrate-1.2.1.min.js"></script>
+	   
+	    
+	<script src="https://use.fontawesome.com/053bf391bc.js"></script>
+	<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+	{% endblock %}
+	
+		
+	</head>
+	    <body>
+	<div class="responsive_menu">
+        <ul class="main_menu">
+            <li><a href="{{ path('app_register') }}">S'inscrire</a></li>
+            <li><a href="{{ path('app_login') }}">Connexion <i class="icon-button fa fa-user"></i></a></li>
+        </ul> <!-- /.main_menu -->
+    </div> <!-- /.responsive_menu -->
+
+	<header class="site-header clearfix">
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<div class="pull-left logo">
+						<a href="{{path('home')}}">
+							<img src="assets/images/includes/logo.png" alt="">
+						</a>
+					</div>	<!-- /.logo -->
+
+					<div class="main-navigation pull-right">
+
+						<nav class="main-nav visible-md visible-lg">
+							<ul class="sf-menu">
+								<li><a href="{{ path('app_register') }}">S'inscrire</a></li>
+            					<li><a href="{{ path('app_login') }}">Connexion <i class="icon-button fa fa-user"></i> </a></li>
+							</ul> <!-- /.sf-menu -->
+						</nav> <!-- /.main-nav -->
+
+						<!-- This one in here is responsive menu for tablet and mobiles -->
+					    <div class="responsive-navigation visible-sm visible-xs">
+					        <a href="#nogo" class="menu-toggle-btn">
+					            <i class="fa fa-bars fa-7x"></i>
+					        </a>
+					    </div> <!-- /responsive_navigation -->
+
+					</div> <!-- /.main-navigation -->
+
+				</div> <!-- /.col-md-12 -->
+
+			</div> <!-- /.row -->
+
+		</div> <!-- /.container -->
+	</header> <!-- /.site-header -->
+
+	{% block body %}{% endblock %}
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="footer-nav clearfix">
+						<ul class="footer-menu">
+							<li><a href="{{ path('about') }}">Notre équipe</a></li>
+							<li><a href="{{ path('contact_us') }}">Nous contacter</a></li>
+							<li><a href="{{ path('mentions_legales') }}">Mentions légales</a></li>
+						</ul> <!-- /.footer-menu -->
+					</nav> <!-- /.footer-nav -->
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+			<div class="row">
+				<div class="col-md-12">
+					<p class="copyright-text">Tous droits réservés &copy; HISLIFE 
+                    </p>
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+	</footer> <!-- /.site-footer -->
+
+
+
+  
+
+			
+
+
+		
+		{# ------>container #}
+
+		{% block javascripts %}{% endblock %}
+		<!-- Scripts -->
+	<script src="assets/js/min/plugins.min.js"></script>
+	<script src="assets/js/min/medigo-custom.min.js"></script>
+
+	<script src="assets/jsinsc/jquery/jquery.min.js"></script>
+
+	<script src="assets/jsinsc/select2/select2.min.js"></script>
+    <script src="assets/jsinsc/datepicker/moment.min.js"></script>
+    <script src="assets/jsinsc/datepicker/daterangepicker.js"></script>
+
+	<script src="assets/js/global.js"></script>
+
+	</body>
+</html>

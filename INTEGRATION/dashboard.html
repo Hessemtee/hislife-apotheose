@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>His Life</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/dashboardstyle.css">
+    <!-- icônes css.gg -->
+    <link href='https://css.gg/css' rel='stylesheet'>
+
+</head>
+
+<body class="row" style="max-width: 100%; margin: 0px;">
+
+    <div class="navConnexionDesktop d-none d-lg-flex justify-content-between align-items-center col-lg-12 border border-dark">
+        <img class="m-2" src="images/HisLifeDesktopLogo.jpg" width="12%" alt="hislife-logo">
+        <div>
+            <ul class="d-inline">
+                <li class="d-inline">Prénom</li>
+                <li class="d-inline">Déconnexion</li>
+            </ul>
+        </div>
+    </div>
+        <div class="WrapperAndCentralBoxes">
+        <div class="wrapper">
+            <!-- LEFT SIDEBAR  -->
+                <nav class="CustomScrollbar pl-2" id="sidebar">
+                    <div id="dismiss">
+                        <i class="d-lg-none gg-close-o"></i>
+                    </div>
+                        <div class="sidebar-header border-bottom border-dark">
+                            <div class ="card-profil">
+                            <h3 class="d-flex align-items-center"><i class="gg-user ml-2 mr-2"></i>Mon Profil</h3>
+                            <p class="name-profil">Micheline</p>
+                        </div>
+                            <h4 class="d-flex align-items-center"><i class="gg-log-out ml-2 mr-3"></i>Déconnexion</h4>
+                        </div>
+
+                        <ul class="list-unstyled components">
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i class="gg-boy mr-4"></i>Profil
+                                    Enfant</a>
+                                <ul>
+                                    <li class="d-none d-lg-block">Gérer le Profil de mon Enfant</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i
+                                        class="gg-smile-upside mr-4"></i>Famille</a>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i class="gg-ruler mr-4"></i>Vie
+                                    Scolaire</a>
+                                    <ul>
+                                        <li class="d-none d-lg-block">Bulletin de Note</li>
+                                        <li class="d-none d-lg-block">Mots des Professeurs</li>
+                                    </ul>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i class="gg-swiss mr-4"></i>Santé</a>
+                                <ul>
+                                    <li class="d-none d-lg-block">Carnet de Santé</li>
+                                 </ul>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i
+                                        class="gg-calendar-dates mr-4"></i>Calendrier</a>
+                                <ul>
+                                     <li class="d-none d-lg-block">Rendez-Vous</li>
+                                     <li class="d-none d-lg-block">Tâches</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i class="gg-mail mr-4"></i>Message</a>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i class="gg-image mr-4"></i>Galerie</a>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i
+                                        class="gg-phone mr-4"></i>Répertoire</a>
+                            </li>
+                            <li>
+                                <a class="d-flex align-items-center" href="#"><i
+                                        class="gg-bell mr-4"></i>Notification</a>
+                            </li>
+                        </ul>
+                </nav>
+                </div>
+    <!-- Black background under menubar -->
+    <div class="overlay"></div>
+    <!--  -->
+
+    <!-- Page Content  -->
+    <div class="m-md-0 p-0 p-md-3" id="content">
+        <nav class="navbar navbar-light  m-0 d-lg-none">
+            <div class="container-fluid">
+                <!-- BURGER MENU LOGO OF LEFT SIDEBAR -->
+                <i class="d-lg-none gg-menu-left" id="sidebarCollapse"></i>
+                <!--  -->
+            <div>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nom Utilisateur</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+    <div class="children-choice-bar row d-flex justify-content-between p-2 m-0">
+        <div class="d-lg-none"> <img class="img-logo" src="images/HisLifeMobileLogo.png" alt=""></div>
+        <div class="arrow"><i class="gg-arrow-left"></i></div>
+        <div class="name-child">Enzo</div>
+        <div class="arrow"><i class="gg-arrow-right"></i></div>
+        <div class="add d-lg-none"><i class=" gg-add"></i></div>
+    </div>
+
+    <main class="">
+        <div class="d-lg-none border border-dark p-2">
+            <a class="card-lien" href="#"><i class=""></i>Vie Scolaire</a>
+            <div class="row">
+                <div class="col-2">
+                    <img class="img-fluid" src="images/avatar.png" alt="">
+                </div>
+            </div>
+            <div class="col-10">
+                <p class="m-0">Micheline</p>
+                <p class="mb-1">25/02/2020</p>
+          
+                <div class="contenu-text">
+                <p>Il as encore jouer aux billes avec ses crottes de nez !</p>
+               </div>
+                <div class="btn-modif">
+                <a class="btn btn-primary" href="">Modifier</a>
+                <a class="btn btn-primary" href="">Supprimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- WARNING ! DESKTOP HTML NOW!  -->
+        <div class="desktop-container d-none d-lg-flex row">
+
+            <div class="col-6 border border-dark mr-0">
+                <h2>Profil de l'enfant</h2>
+                    <ul>
+                        <li>Blabla</li>
+                        <li>Blibli</li>
+                        <li>Bloblo</li>
+                    </ul>
+            </div>
+            
+            <div class="col-6 border border-dark mr-0">
+                <h2>Santé</h2>
+                <ul>
+                    <li>Blabla</li>
+                    <li>Blibli</li>
+                    <li>Bloblo</li>
+                </ul>
+            </div>
+            
+            <div class="col-6 border border-dark">
+                <h2>Scolarité</h2>
+                <ul>
+                    <li>Blabla</li>
+                    <li>Blibli</li>
+                    <li>Bloblo</li>
+                </ul>
+            </div>
+            
+            <div class="col-6 border border-dark">
+                <h2>Photos</h2>
+                <ul>
+                    <li>Blabla</li>
+                    <li>Blibli</li>
+                    <li>Bloblo</li>
+                </ul>
+            </div>
+        </div>
+        <!-- END OF DESKTOP HTML -->
+
+    </div>
+    </div>
+    </main>
+
+    <footer class="footer-nav d-flex m-lg-0">
+        <nav>    
+            <ul> 
+                <li class= "d-inline">A propos</li>
+                <li class= "d-inline">Mentions légales</li>
+                <li class= "d-inline">Contact</li>
+            </ul>
+        </nav>
+       
+    </footer>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+   
+</body>
+</html>

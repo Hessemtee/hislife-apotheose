@@ -1,0 +1,67 @@
+{% extends 'basedashboard.html.twig' %}
+
+
+
+{% block body %}
+
+{% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+{% endfor %}
+
+
+
+{% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+{% endfor %}
+
+	
+
+<section class="light-content our-team">
+		
+	
+	<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">MOTS DES PROFESSEURS</h2> 
+						<a href="{{ path('note_add') }}" class="large-button green-color">Ajouter</a>
+					</div> <!-- /.section-header -->
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+
+
+{% for note in notes %}
+	<div class="container">	
+		<div class="row project-single">
+			<div class="col-md-8">
+				<div class="project-img">
+					<img src="{{asset(note.file)}}" alt="Project Image 1">
+				</div> <!-- /.project-img -->
+			</div> <!-- /.col-md-8 -->
+			<div class="col-md-4">
+				<div class="project-info">
+					<h3 class="project-title">{{ note.name }}</h3>
+					<div class="btnchoice">
+					<a href="{{ path('note_edit', {'id': note.id}) }}" class="large-button green-color">Modifier</a>
+					{{ include('note/_delete_form.html.twig')}}
+					</div>
+					{# <ul class="meta-post">
+						<li><span>Date:</span>{{ healthbook.createdAt }}</li>
+					</ul> #}
+				</div> <!-- /.project-info -->
+			</div> <!-- /.col-md-4 -->
+		</div> <!-- /.row -->
+	</div> <!-- /.container -->	
+{% endfor %}	
+	 </section> <!-- /.our-team -->
+
+{% endblock %}
+
+
+
+

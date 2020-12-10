@@ -1,0 +1,116 @@
+{# {% extends 'basedashboard.html.twig' coucou tata ca va tonton ? ouiiiiiii tes bien et toi ? la pataaaaaaate !!!! %}
+
+
+{% block body %}
+
+<h1>Mon compte</h1>
+
+<dl class="row">
+    <dt class="col-3">Prénom d'utilisateur</dt>
+    <dd class="col-9">{{ people.firstname }}</dd>
+    <dt class="col-3">Adresse e-mail</dt>
+    <dd class="col-9">{{ people.email }}</dd>
+   
+    <dt class="col-12">Liste de familles</dt>
+    {% for family in people.families %}
+    <dd class="col-3"> {{ family }} </li> </dd>
+    <dt class="col-2">Lien d'invitation :</dt>
+    <dd class="col-7">www.localhost:8080/register?token={{ family.token }}</dd> 
+    {% endfor %}
+    <dt class="col-12">Liste des enfants</dt>
+    {% for family in people.families %}
+    {% for child in family.children %}
+    <dd class="col-3"> {{ child }} </dd>
+    {% endfor %}
+    {% endfor %}
+
+</dl>
+    <td><a href="{{path('people_edit')}}" class="btn btn-primary ">Modifier mes informations personnelles</a></td>
+
+
+	<div class="card-btn">
+          {{ include('people/_delete_form.html.twig')}}
+        </div>
+
+
+{% endblock %} #}
+
+
+{% extends 'basedashboard.html.twig' %}
+
+
+{% block body %}
+
+
+
+<section class="light-content our-team">
+{% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <div class="alert-{{ label }} message-flash">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">Mon Profil </h2>
+					</div>
+					<!-- /.section-header -->
+				</div>
+				<!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+
+<div class="photo-card">
+<div class="photo-details boum">
+        <div class="" style="display:flex;">
+            <div>
+                <h1 style="color:#65C8D0; font-size: 30px;">{{ people.firstname }}</h1>
+                <h1 style="color:#65C8D0; font-size: 30px;">{{ people.lastname }}</h1>
+                <h2 style="color:#65C8D0; font-size: 15px;">né le {{ people.birthdate|date("d/m/Y") }}</h2>  
+                <p style="color:white">{{ people.email }}</p></br>
+            </div>
+            <div class="thumb-post profile-picture">
+            {% if (people.picture is null) %}
+                <img src="{{ asset('/../assets/images/profile.svg')}}" alt="" class="img-circle">
+            {% else %}
+                <img src="{{ asset(people.picture)}}" alt="" class="img-circle">
+            {% endif %}
+            </div>
+        </div>
+        <h1 style="color:#65C8D0; font-size: 30px;">Mes familles:</h1>
+				{% for family in people.families %}
+					    <p style="color:white; font-style: italic;">{{ family }} </p>
+                        <p style="color:white;">Lien d'invitation pour cette famille :</p>
+                        <p style="color:black">http://ec2-34-227-161-244.compute-1.amazonaws.com/inscription?token={{ family.token }}</p>
+                        </br>
+					 {% endfor %} 
+        <h1 style="color:#65C8D0; font-size: 30px;">Mes enfants:</h1>
+                    {% for family in people.families %}
+                    {% for child in family.children %}
+                    <a href="{{ path('child_read', {'id': child.id}) }}">
+                        <p style="color:white; font-style: italic;" class="col-3"> {{ child }} </p></a>
+    {% endfor %}
+    {% endfor %}  
+</br>
+                    <a class="photo-background" href="{{ path('people_edit', {'id': people.id}) }}" class="large-button-blanc white-color">
+						<button class="large-button-blanc white-color" type="submit" style="margin-left:42% ;">Editer Le Profil</button>
+					</a>
+</div>
+</div>
+
+		
+
+
+</section>
+
+
+
+
+
+{% endblock %}

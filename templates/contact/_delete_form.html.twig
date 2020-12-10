@@ -1,0 +1,9 @@
+{% if contact is defined %}
+
+<form method="post" action="{{ path('contact_delete', {'id': contact.id}) }}" >
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact.id) }}">
+    <button class="btn btn-danger">Supprimer</button>
+</form>
+
+{% endif %}

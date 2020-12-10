@@ -1,0 +1,67 @@
+{% extends 'basedashboard.html.twig' %}
+
+{% block body %}
+
+
+
+
+<section class="light-content our-team">
+{% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <div class="alert-{{ label }} message-flash">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+		<div class="container">
+			<div class="row">
+	
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">Mes Enfants</h2>
+						<a href="{{ path('child_create') }}" class="large-button green-color">Ajouter</a>
+					</div>
+					<!-- /.section-header -->
+				</div>
+				<!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+
+		{% for child in children %}
+			<div class="photo-card">
+				{% if child.picture is not null %}
+                <div class="photo-background" style="background-image:url('{{ asset(child.picture) }}'); "></div>
+				{% else %}
+
+                <div class="photo-background" style="background-image:url('{{ asset('assets/images/enfantbase.jpg') }}'); "></div>
+			
+				{% endif %} 
+				<div class="photo-details ">
+				<a href="{{ path('child_read', {'id': child.id}) }}">
+					<h1 class="title">{{ child.lastname }}</h1></a>
+                    <h2 class="title">{{ child.firstname }}</h2>
+                   
+				</br>
+				<div class="p-t-10">
+					<a  href="{{ path('child_edit', {'id': child.id}) }}" class="large-button-blanc white-color">
+						<button class="large-button-blanc white-color" type="submit">Modifier</button>
+					</a>
+
+
+				</div>
+			</div>
+
+		</div>
+	{% endfor %}
+
+
+</section>
+
+
+
+
+
+{% endblock %}

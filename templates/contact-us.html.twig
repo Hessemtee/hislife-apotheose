@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+<section class="light-content our-team">
+{% for message in app.flashes('success') %}
+				<div class="alert alert-success message-flash">
+					{{ message }}
+				</div>
+			{% endfor %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">Nous Contacter</h2>
+					</div>
+					<!-- /.section-header -->
+				</div>
+				<!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+		<div class="font-poppinsdeux">
+			<div class="wrapper wrapper--w780">
+				<div class="card card-9">
+					<div class="card-heading"></div>
+                    <div class="card-body">
+                    <h2 class="title">Nous Contacter</h2>
+                        {{ form_start(form) }}
+                        {{ form_row(form.email)}}
+                        {{ form_row(form.objet)}}
+                        {{ form_row(form.message)}}
+						<div class="p-t-10">
+							<button class="large-button white-color" type="submit">Valider</button>
+						</div>
+                        {{ form_end(form)}}
+					</div>
+				</div>
+			</div>
+		</section>
+{% endblock %}

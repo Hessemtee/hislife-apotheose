@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+		<title>
+			{% block title %}His Life
+			{% endblock %}
+		</title>
+
+		<link rel="stylesheet" href="../../assets/bootstrap/bootstrap.css">
+		<link rel="stylesheet" href="../../assets/css/misc.css">
+		<link rel="stylesheet" href="../../assets/css/blue-scheme.css">
+		<link rel="stylesheet" href="../../assets/css/main.css" media="all">
+		<link rel="stylesheet" href="../../assets/css/cards.css" media="all">
+		<!-- JavaScripts -->
+		<script src="../../assets/js/jquery-1.10.2.min.js"></script>
+		<script src="../../assets/js/jquery-migrate-1.2.1.min.js"></script>
+
+        <script src="https://use.fontawesome.com/053bf391bc.js"></script>
+		<link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon" />
+
+		{% block stylesheets %}{% endblock %}
+	</head>
+	<body>
+		<div class="responsive_menu">
+			<ul class="main_menu">
+				<li>
+					<a href="">Vie Scolaire</a>
+					<ul>
+						<li>
+							<a href="{{path('note_browse')}}">Mots des Professeurs</a>
+						</li>
+						<li>
+							<a href="{{path('grade_browse')}}">Bulletin de note</a>
+						</li>
+					</li>
+				</li>
+				<li>
+					<a href="{{ path('healthbook_browse') }}">Santé</a>
+				</li>
+				<li>
+					<a href="{{ path('picture')}}">Galerie photo</a>
+				</li>
+				<li>
+					<a href="{{path('contact_browse')}}">Répertoire</a>
+				</li>
+				<li>
+					<a href="{{ path('evenement_index') }}">Calendrier</a>
+				</li>
+				<li>
+					<a href="{{ path('post_browse')}}">Message</a>
+				</li>
+				<li>
+					<a href="">{{ app.user.firstname }}</a>
+					<ul>
+						{% if app.user %}
+							<li>
+								<a href="{{ path('people_profile')}}">Mon Profil</a>
+							</li>
+							<li>
+								<a href="{{ path('child_profile')}}">Profil Enfant</a>
+							</li>
+							<li>
+								<a href="{{ path('family_profile') }}">Famille</a>
+							</li>
+							
+							<li>
+								<a href="{{ path('app_logout') }}">Déconnexion</a>
+							</li>
+						{% endif %}
+					</ul>
+				</li>
+			</ul>
+			<!-- /.main_menu -->
+		</div>
+		<!-- /.responsive_menu -->
+
+		<header class="site-header clearfix">
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-md-12">
+
+						<div class="pull-left logo">
+							<a href="{{ path('dashboard') }}">
+								<img src="../../assets/images/includes/logo.png" alt="">
+							</a>
+						</div>
+						<!-- /.logo -->
+
+						<div class="main-navigation pull-right">
+
+							<nav class="main-nav visible-md visible-lg">
+								<ul class="sf-menu">
+									<li>
+										<a href="">Vie Scolaire</a>
+										<ul>
+											<li>
+												<a href="{{path('note_browse')}}">Mots des Professeurs</a>
+											</li>
+											<li>
+												<a href="{{path('grade_browse')}}">Bulletin de note</a>
+											</li>
+										</li>
+									</li>
+								</ul>
+								<li>
+									<a href="{{ path('healthbook_browse') }}">Santé</a>
+								</li>
+								<li>
+									<a href="{{ path('picture')}}">Galerie photo</a>
+								</li>
+								<li>
+									<a href="{{path('contact_browse')}}">Répertoire</a>
+								</li>
+								<li>
+									<a href="{{ path('evenement_index') }}">Calendrier</a>
+								</li>
+								<li>
+									<a href="{{ path('post_browse')}}">Message</a>
+								</li>
+								<li>
+									<a href="{{ path('people_profile')}}">{{ app.user.firstname }}</a>
+									<ul>
+										{% if app.user %}
+											<li>
+												<a href="{{ path('people_profile')}}">Mon Profil</a>
+											</li>
+											<li>
+												<a href="{{ path('child_profile')}}">Profil Enfant</a>
+											</li>
+											<li>
+												<a href="{{ path('family_profile') }}">Famille</a>
+											</li>
+											
+											<li>
+												<a href="{{ path('app_logout') }}">Déconnexion</a>
+											</li>
+										{% endif %}
+									</ul>
+								</li>
+							</ul>
+							<!-- /.sf-menu -->
+						</nav>
+						<!-- /.main-nav -->
+
+
+						<!-- This one in here is responsive menu for tablet and mobiles -->
+						<div class="responsive-navigation visible-sm visible-xs">
+							<a href="#nogo" class="menu-toggle-btn">
+								<i class="fa fa-bars fa-7x"></i>
+							</a>
+						</div>
+						<!-- /responsive_navigation -->
+
+					</div>
+					<!-- /.main-navigation -->
+
+				</div>
+				<!-- /.col-md-12 -->
+
+			</div>
+			<!-- /.row -->
+
+		</div>
+		<!-- /.container -->
+	</body>
+</html></header><!-- /.site-header -->
+
+	{% block body %}{% endblock %}
+	<footer class="site-footer">
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="footer-nav clearfix">
+				<ul class="footer-menu">
+					<li>
+						<a href="{{ path('dashboard_about') }}">Notre équipe</a>
+					</li>
+					<li>
+						<a href="{{ path('dashboard_contact_us') }}">Nous contacter</a>
+					</li>
+					<li>
+						<a href="{{ path('dashboard_mentions_legales') }}">Mentions légales</a>
+					</li>
+				</ul>
+				<!-- /.footer-menu -->
+			</nav>
+			<!-- /.footer-nav -->
+		</div>
+		<!-- /.col-md-12 -->
+	</div>
+	<!-- /.row -->
+	<div class="row">
+		<div class="col-md-12">
+			<p class="copyright-text">Droits d'auteur &copy; HISLIFE
+			</p>
+		</div>
+		<!-- /.col-md-12 -->
+	</div>
+	<!-- /.row -->
+</div>
+<!-- /.container --></footer>
+
+<script src="../../assets/js/min/plugins.min.js"></script>
+<script src="../../assets/js/min/medigo-custom.min.js"></script>
+
+
+<script src="../../assets/jsinsc/select2/select2.min.js"></script>
+<script src="../../assets/jsinsc/datepicker/moment.min.js"></script>
+<script src="../../assets/jsinsc/datepicker/daterangepicker.js"></script>
+
+<script src="../../assets/js/global.js"></script> 
+<!-- jQuery CDN - -->
+{% block javascripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../../assets/js/moment-with-locales.js"></script> 
+
+
+<script type="text/javascript">
+	window.addEventListener('DOMContentLoaded', function (e) {
+var idSelect = 0;
+$.ajax({
+url: '{{ path('ajax_action') }}',
+type: "POST",
+dataType: "json",
+data: {
+"idSelect": idSelect
+
+},
+async: true,
+success: function test(data) {
+
+moment.locale('fr');
+{# SCHOOL BLOCK #} 
+{# SCHOOL - LASTPOST = created_at #}
+
+let selectedChildSchoolEvent_lastPost = document.getElementById('selectedChildSchoolEvent_lastPost');
+
+if (data.lastSchoolEventArray.created_at !== undefined) {
+
+let date = data.lastSchoolEventArray.created_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');
+selectedChildSchoolEvent_lastPost.textContent = date;
+
+} else {
+selectedChildSchoolEvent_lastPost.textContent = ''
+}
+
+{# SCHOOL - NAME #}
+
+let selectedChildSchoolEvent_name = document.getElementById('selectedChildSchoolEvent_name')
+selectedChildSchoolEvent_name.textContent = data.lastSchoolEventArray.name
+
+if (data.lastSchoolEventArray.name === undefined) {
+selectedChildSchoolEvent_name.textContent = 'Aucun entrée dans vie scolaire'
+}
+
+{# SCHOOL - FILE #}
+let selectedChildSchoolEvent_img = document.getElementById('selectedChildSchoolEvent_img');
+
+if (data.lastSchoolEventArray.file !== undefined) {
+let selectedChildSchoolEvent_img_src = selectedChildSchoolEvent_img.attributes[1];
+selectedChildSchoolEvent_img_src.value = data.lastSchoolEventArray.file;
+} else {
+let selectedChildSchoolEvent_img_src = selectedChildSchoolEvent_img.attributes[1];
+selectedChildSchoolEvent_img_src.value = '../assets/images/ecoleprimaire.jpg'
+}
+
+{# SCHOOL - READ BUTTON #}
+let selectedChildSchoolEvent_detail = document.getElementById('selectedChildSchoolEvent_detail');
+let selectedChildSchoolEvent_button_href = selectedChildSchoolEvent_detail.attributes[1]
+if (data.lastSchoolEventArray.type === 'grade') {
+selectedChildSchoolEvent_button_href.textContent = '{{ path('grade_browse') }}'
+}
+else {
+selectedChildSchoolEvent_button_href.textContent = '{{ path('note_browse') }}'
+}
+
+
+{# HEALTH - BLOCK #} 
+{# HEALTH - LASPOST #}
+
+let selectedChildHealthEvent = document.getElementById('selectedChildHealthEvent');
+
+if (data.lastHealthbook.created_at !== undefined) {
+let date = data.lastHealthbook.created_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildHealthEvent.textContent = date;
+} else {
+selectedChildHealthEvent.textContent = '';
+}
+
+
+{# HEALTH - NAME #}
+
+let selectedChildHealthEvent_name = document.getElementById('selectedChildHealthEvent_name')
+selectedChildHealthEvent_name.textContent = data.lastHealthbook.name
+
+if (data.lastHealthbook.name === undefined) {
+selectedChildHealthEvent_name.textContent = 'Aucune entrée dans Santé'
+}
+
+{# HEALTH - FILE #}
+
+let selectedChildHealthEvent_img = document.getElementById('selectedChildHealthEvent_img');
+
+if (data.lastHealthbook.file !== undefined) {
+let selectedChildHealthEvent_img_src = selectedChildHealthEvent_img.attributes[1];
+selectedChildHealthEvent_img_src.value = data.lastHealthbook.file;
+} else {
+let selectedChildHealthEvent_img_src = selectedChildHealthEvent_img.attributes[1];
+selectedChildHealthEvent_img_src.value = '../assets/images/sante.jpg'
+}
+
+{# PICTURE - TITLE #}
+
+let selectedChildLastFamilyPicture_title = document.getElementById('selectedChildLastFamilyPicture_title')
+selectedChildLastFamilyPicture_title.textContent = data.lastFamilyPicture.title
+
+if (data.lastFamilyPicture.title === undefined) {
+selectedChildLastFamilyPicture_title.textContent = 'Aucune photo récente postée'
+}
+
+{# PICTURE - LASTPOST #}
+
+let selectedChildLastFamilyPicture_lastPost = document.getElementById('selectedChildLastFamilyPicture_lastPost');
+
+if (data.lastFamilyPicture.created_at !== undefined) {
+
+let date = data.lastFamilyPicture.created_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildLastFamilyPicture_lastPost.textContent = date;
+
+} else {
+selectedChildLastFamilyPicture_lastPost.textContent = '';
+}
+
+{# PICTURE - FILE #}
+
+let selectedChildLastFamilyPicture_img = document.getElementById('selectedChildLastFamilyPicture_img');
+
+if (data.lastFamilyPicture.file !== undefined) {
+let selectedChildLastFamilyPicture_img_src = selectedChildLastFamilyPicture_img.attributes[1];
+selectedChildLastFamilyPicture_img_src.value = data.lastFamilyPicture.file;
+} 
+else {
+
+let selectedChildLastFamilyPicture_img_src = selectedChildLastFamilyPicture_img.attributes[1];
+
+selectedChildLastFamilyPicture_img_src.value = '../assets/images/includes/member3.jpg'
+}
+
+{# EVENT- NAME #}
+
+let selectedChildLastEvent_name = document.getElementById('selectedChildLastEvent_name')
+selectedChildLastEvent_name.textContent = data.lastFamilyEvent.name
+
+if (data.lastFamilyEvent.name === undefined) {
+selectedChildLastEvent_name.textContent = 'Aucune entrée dans le calendrier'
+}
+
+{# EVENT- TYPE #}
+
+let selectedChildLastEvent_type = document.getElementById('selectedChildLastEvent_type')
+selectedChildLastEvent_type.textContent = data.lastFamilyEvent.type
+
+if (data.lastFamilyEvent.type === undefined) {
+selectedChildLastEvent_type.textContent = ''
+}
+
+{# EVENT - CREATED AT#}
+
+let selectedChildLastEvent_lastPost = document.getElementById('selectedChildLastEvent_lastPost');
+
+if (data.lastFamilyEvent.created_at !== undefined) {
+
+let date = data.lastFamilyEvent.created_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildLastEvent_lastPost.textContent = date;
+
+}
+
+{# EVENT- BEGIN AT #}
+
+let selectedChildLastEvent_beginAt = document.getElementById('selectedChildLastEvent_beginAt')
+let selectedChildLastEvent_img = document.getElementById('selectedChildLastEvent_img');
+let selectedChildLastEvent_img_src = selectedChildLastEvent_img.attributes[1];
+
+if (data.lastFamilyEvent.begin_at !== undefined) {
+
+let date = data.lastFamilyEvent.begin_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildLastEvent_beginAt.textContent = date;
+
+selectedChildLastEvent_img_src.value = '';
+}
+
+else {
+selectedChildLastEvent_beginAt.textContent = ''
+selectedChildLastEvent_img_src.value = '';
+}
+
+{# EVENT- END AT #}
+
+let selectedChildLastEvent_endAt = document.getElementById('selectedChildLastEvent_endAt')
+
+if (data.lastFamilyEvent.end_at !== undefined) {
+
+let date = data.lastFamilyEvent.end_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildLastEvent_endAt.textContent = date;
+
+}
+
+else {
+selectedChildLastEvent_endAt.textContent = ''
+}
+
+}
+})});
+</script>
+
+
+<script type="text/javascript">
+	$('#selectType').on('change', function (e) {
+var idSelect = e.currentTarget.value;
+
+console.log(e);
+$.ajax({
+url: '{{ path('ajax_action') }}',
+type: "POST",
+dataType: "json",
+data: {
+"idSelect": idSelect
+},
+
+async: true,
+success: function test(data) {
+
+{# SCHOOL BLOCK #}
+{# SCHOOL - LASTPOST = created_at #}
+
+let selectedChildSchoolEvent_lastPost = document.getElementById('selectedChildSchoolEvent_lastPost');
+
+if (data.lastSchoolEventArray.created_at !== undefined) {
+
+let date = data.lastSchoolEventArray.created_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');
+selectedChildSchoolEvent_lastPost.textContent = date;
+
+} else {
+selectedChildSchoolEvent_lastPost.textContent = ''
+}
+
+{# SCHOOL - NAME #}
+
+let selectedChildSchoolEvent_name = document.getElementById('selectedChildSchoolEvent_name')
+selectedChildSchoolEvent_name.textContent = data.lastSchoolEventArray.name
+
+if (data.lastSchoolEventArray.name === undefined) {
+selectedChildSchoolEvent_name.textContent = 'Aucun entrée dans vie scolaire'
+}
+
+{# SCHOOL - FILE #}
+let selectedChildSchoolEvent_img = document.getElementById('selectedChildSchoolEvent_img');
+
+if (data.lastSchoolEventArray.file !== undefined) {
+let selectedChildSchoolEvent_img_src = selectedChildSchoolEvent_img.attributes[1];
+selectedChildSchoolEvent_img_src.value = data.lastSchoolEventArray.file;
+} else {
+let selectedChildSchoolEvent_img_src = selectedChildSchoolEvent_img.attributes[1];
+selectedChildSchoolEvent_img_src.value = '../../assets/images/ecoleprimaire.jpg'
+}
+
+{# SCHOOL - READ BUTTON #}
+let selectedChildSchoolEvent_detail = document.getElementById('selectedChildSchoolEvent_detail');
+let selectedChildSchoolEvent_button_href = selectedChildSchoolEvent_detail.attributes[1]
+if (data.lastSchoolEventArray.type === 'grade') {
+selectedChildSchoolEvent_button_href.textContent = '{{ path('grade_browse') }}'
+}
+else {
+selectedChildSchoolEvent_button_href.textContent = '{{ path('note_browse') }}'
+}
+
+
+{# HEALTH - BLOCK #} 
+{# HEALTH - LASPOST #}
+
+let selectedChildHealthEvent = document.getElementById('selectedChildHealthEvent');
+
+if (data.lastHealthbook.created_at !== undefined) {
+
+let date = data.lastHealthbook.created_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildHealthEvent.textContent = date;
+
+} else {
+selectedChildHealthEvent.textContent = '';
+}
+
+
+{# HEALTH - NAME #}
+
+let selectedChildHealthEvent_name = document.getElementById('selectedChildHealthEvent_name')
+selectedChildHealthEvent_name.textContent = data.lastHealthbook.name
+
+if (data.lastHealthbook.name === undefined) {
+selectedChildHealthEvent_name.textContent = 'Aucune entrée dans Santé'
+}
+
+{# HEALTH - FILE #}
+
+let selectedChildHealthEvent_img = document.getElementById('selectedChildHealthEvent_img');
+
+if (data.lastHealthbook.file !== undefined) {
+let selectedChildHealthEvent_img_src = selectedChildHealthEvent_img.attributes[1];
+selectedChildHealthEvent_img_src.value = data.lastHealthbook.file;
+} else {
+let selectedChildHealthEvent_img_src = selectedChildHealthEvent_img.attributes[1];
+selectedChildHealthEvent_img_src.value = '../../assets/images/sante.jpg'
+}
+
+
+{# PICTURE - TITLE #}
+
+let selectedChildLastFamilyPicture_title = document.getElementById('selectedChildLastFamilyPicture_title')
+selectedChildLastFamilyPicture_title.textContent = data.lastFamilyPicture.title
+
+if (data.lastFamilyPicture.title === undefined) {
+selectedChildLastFamilyPicture_title.textContent = 'Aucune photo récente postée'
+}
+
+{# PICTURE - LASTPOST #}
+
+let selectedChildLastFamilyPicture_lastPost = document.getElementById('selectedChildLastFamilyPicture_lastPost');
+
+if (data.lastFamilyPicture.created_at !== undefined) {
+
+let date = data.lastFamilyPicture.created_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildLastFamilyPicture_lastPost.textContent = date;
+
+} else {
+selectedChildLastFamilyPicture_lastPost.textContent = '';
+}
+
+{# PICTURE - FILE #}
+
+let selectedChildLastFamilyPicture_img = document.getElementById('selectedChildLastFamilyPicture_img');
+
+if (data.lastFamilyPicture.file !== undefined) {
+let selectedChildLastFamilyPicture_img_src = selectedChildLastFamilyPicture_img.attributes[1];
+selectedChildLastFamilyPicture_img_src.value = data.lastFamilyPicture.file;
+} 
+else {
+
+let selectedChildLastFamilyPicture_img_src = selectedChildLastFamilyPicture_img.attributes[1];
+
+selectedChildLastFamilyPicture_img_src.value = '../assets/images/includes/member3.jpg'
+}
+
+{# EVENT- NAME #}
+
+let selectedChildLastEvent_name = document.getElementById('selectedChildLastEvent_name')
+selectedChildLastEvent_name.textContent = data.lastFamilyEvent.name
+
+if (data.lastFamilyEvent.name === undefined) {
+selectedChildLastEvent_name.textContent = 'Aucune entrée dans le calendrier'
+}
+
+{# EVENT - CREATED AT#}
+
+let selectedChildLastEvent_lastPost = document.getElementById('selectedChildLastEvent_lastPost');
+
+if (data.lastFamilyEvent.created_at !== undefined) {
+
+let date = data.lastFamilyEvent.created_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildLastEvent_lastPost.textContent = date;
+}
+
+{# EVENT- TYPE #}
+
+let selectedChildLastEvent_type = document.getElementById('selectedChildLastEvent_type')
+selectedChildLastEvent_type.textContent = data.lastFamilyEvent.type
+
+if (data.lastFamilyEvent.type === undefined) {
+selectedChildLastEvent_type.textContent = ''
+}
+
+{# EVENT- BEGIN AT #}
+
+let selectedChildLastEvent_beginAt = document.getElementById('selectedChildLastEvent_beginAt')
+let selectedChildLastEvent_img = document.getElementById('selectedChildLastEvent_img');
+let selectedChildLastEvent_img_src = selectedChildLastEvent_img.attributes[1];
+
+if (data.lastFamilyEvent.begin_at !== undefined) {
+
+let date = data.lastFamilyEvent.begin_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildLastEvent_beginAt.textContent = date;
+
+selectedChildLastEvent_img_src.value = '';
+}
+
+else {
+selectedChildLastEvent_beginAt.textContent = ''
+selectedChildLastEvent_img_src.value = '';
+}
+
+{# EVENT- END AT #}
+
+let selectedChildLastEvent_endAt = document.getElementById('selectedChildLastEvent_endAt')
+
+if (data.lastFamilyEvent.end_at !== undefined) {
+
+let date = data.lastFamilyEvent.end_at.date;
+date = moment(date).format('dddd DD MMMM YYYY HH:mm');	
+selectedChildLastEvent_endAt.textContent = date;
+
+}
+
+else {
+selectedChildLastEvent_endAt.textContent = ''
+}
+
+
+}
+})});
+</script>{% endblock %}
+</body></html>

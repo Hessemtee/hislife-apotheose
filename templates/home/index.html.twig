@@ -1,0 +1,189 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<section id="homeIntro" class="parallax first-widget">
+		{% for message in app.flashes('danger') %}
+				<div class="alert alert-danger message-flash">
+					{{ message }}
+				</div>
+			{% endfor %}
+	    <div class="parallax-overlay">
+		    <div class="container home-intro-content">
+		        <div class="row">
+		        	<div class="col-md-12">
+		        		<h2>HIS LIFE</h2></br>
+		        		<h3 style="font-weight:bold; color:white;">Parents éloignés par le travail, séparés ou autre... soyez toujours au courant de ce qu'il ce passe dans la vie de vos enfants.</h3> </br>
+		        		<a href="{{ path('app_register') }}" class="large-button white-color">Inscrivez-vous</a>
+		        	</div> <!-- /.col-md-12 -->
+		        </div> <!-- /.row -->
+		    </div> <!-- /.container -->
+	    </div> <!-- /.parallax-overlay -->
+	</section> <!-- /#homeIntro -->
+
+	<section class="light-content our-team">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">Ce que His Life vous propose</h2>
+						<p class="section-desc">Soyez toujours proche de vos enfants quelques soit la distance</p>
+					</div> <!-- /.section-header -->
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+		<div class="team-members">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-6 col-md-3 col-sm-4">
+						<div class="team-member">
+							<div class="thumb-post">
+								<img src="assets/images/includes/member1.jpg" alt="">
+							</div>
+							<div class="member-content">
+								<h4 class="member-name">Santé</h4>
+								<p>Plus besoin d'avoir le carnet de santé sous la main, His Life se charge de ça pour vous.</p>
+							</div>
+						</div> <!-- /.team-member -->
+					</div> <!-- /.col-md-4 -->
+
+					<div class="col-sm-6 col-md-3 col-sm-4">
+						<div class="team-member">
+							<div class="thumb-post">
+								<img src="assets/images/includes/member2.jpg" alt="">
+							</div>
+							<div class="member-content">
+								<h4 class="member-name">Vie Scolaire</h4>
+								<p>Soyez toujours au courant de ce qu'il ce passe à l'école de votre enfant.</p>
+							</div>
+						</div> <!-- /.team-member -->
+					</div> <!-- /.col-md-4 -->
+
+					<div class="col-sm-6 col-md-3 col-sm-4">
+						<div class="team-member">
+							<div class="thumb-post">
+								<img src="assets/images/includes/member3.jpg" alt="">
+							</div>
+							<div class="member-content">
+								<h4 class="member-name">Galerie Photo</h4>
+								<p>Partagez avec vos proches vos photos souvenir.</p>
+							</div>
+						</div> <!-- /.team-member -->
+					</div> <!-- /.col-md-4 -->
+					
+					<div class="col-sm-6 col-md-3 col-sm-4">
+						<div class="team-member">
+							<div class="thumb-post">
+								<img src="assets/images/includes/member4.jpg" alt="">
+							</div>
+							<div class="member-content">
+								<h4 class="member-name">Calendrier</h4>
+								<p>Ne ratez plus aucun rendez-vous concernant votre enfant.</p>
+							</div>
+						</div> <!-- /.team-member -->
+					</div> <!-- /.col-md-4 -->
+
+				</div> <!-- /.row -->
+			</div> <!-- /.container -->
+		</div> <!-- /.team-members -->
+	</section> <!-- /.our-team -->
+	
+	{# <section id="blogPosts" class="parallax">
+	    <div class="parallax-overlay">
+		    <div class="container">
+		        <div class="row">
+		        	<div class="col-md-12">
+		        		<div class="section-header">
+							<h2 class="section-title">Notre équipe de dev</h2>
+							<p class="section-desc">Everything you need to create a professional website.</p>
+						</div> <!-- /.section-header -->
+		        	</div> <!-- /.col-md-12 -->
+		        </div> <!-- /.row -->
+		        <div class="row latest-posts">
+		        	<div class="col-md-3 col-sm-6">
+		        		<div class="blog-post clearfix">
+		        			<div class="thumb-post">
+		        				<a href="blog-single.html"><img src="assets/images/includes/blogthumb1.jpg" alt="" class="img-circle"></a>
+		        			</div>
+		        			<div class="blog-post-content">
+		        				<h4 class="post-title"><a href="blog-single.html">Audrey</a></h4>
+		        				<span class="meta-post-date">Titre</span>
+		        			</div>
+		        		</div> <!-- /.blog-post -->
+		        	</div> <!-- /.col-md-4 -->
+		        	<div class="col-md-3 col-sm-6">
+		        		<div class="blog-post clearfix">
+		        			<div class="thumb-post">
+		        				<a href="blog-single.html"><img src="assets/images/includes/blogthumb2.jpg" alt="" class="img-circle"></a>
+		        			</div>
+		        			<div class="blog-post-content">
+		        				<h4 class="post-title"><a href="blog-single.html">Franck</a></h4>
+		        				<span class="meta-post-date">Titre</span>
+		        			</div>
+		        		</div> <!-- /.blog-post -->
+		        	</div> <!-- /.col-md-4 -->
+		        	<div class="col-md-3 col-sm-6">
+		        		<div class="blog-post clearfix">
+		        			<div class="thumb-post">
+		        				<a href="blog-single.html"><img src="assets/images/includes/blogthumb3.jpg" alt="" class="img-circle"></a>
+		        			</div>
+		        			<div class="blog-post-content">
+		        				<h4 class="post-title"><a href="blog-single.html">Gaëtan</a></h4>
+		        				<span class="meta-post-date">Titre</span>
+		        			</div>
+		        		</div> <!-- /.blog-post -->
+		        	</div> <!-- /.col-md-4 -->
+		        	<div class="col-md-3 col-sm-6">
+		        		<div class="blog-post clearfix">
+		        			<div class="thumb-post">
+		        				<a href="blog-single.html"><img src="assets/images/includes/blogthumb3.jpg" alt="" class="img-circle"></a>
+		        			</div>
+		        			<div class="blog-post-content">
+		        				<h4 class="post-title"><a href="blog-single.html">Floriane</a></h4>
+		        				<span class="meta-post-date">Titre</span>
+		        			</div>
+		        		</div> <!-- /.blog-post -->
+		        	</div> <!-- /.col-md-4 -->
+		        </div> <!-- /.row -->
+		    </div> <!-- /.container -->
+	    </div> <!-- /.parallax-overlay -->
+	</section> <!-- /#blogPosts --> #}
+
+	{# <footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="footer-nav clearfix">
+						<ul class="footer-menu">
+							<li><a href="index.html">A propos</a></li>
+							<li><a href="portfolio.html">Nous contacter</a></li>
+							<li><a href="blog.html">Mentions légales</a></li>
+						</ul> <!-- /.footer-menu -->
+					</nav> <!-- /.footer-nav -->
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+			<div class="row">
+				<div class="col-md-12">
+					<p class="copyright-text">Copyright &copy; HISLIFE 
+                    </p>
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+	</footer> <!-- /.site-footer --> #}
+
+
+
+  
+
+			
+
+{% endblock %}
+		
+		{# ------>container #}
+{# 
+		{% block javascripts %}{% endblock %}
+		<!-- Scripts -->
+	<script src="js/min/plugins.min.js"></script>
+	<script src="js/min/medigo-custom.min.js"></script> #}
+
+

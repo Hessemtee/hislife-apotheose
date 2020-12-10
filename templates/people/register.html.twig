@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+<h1>Inscription</h1>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <span style="color: #ffffff;">* Ces champs sont obligatoires</span>
+    <button type="submit" class="btn btn-success">S'inscrire</button>
+{{ form_end(form) }}
+
+{% endblock %}

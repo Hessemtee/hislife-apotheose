@@ -1,0 +1,98 @@
+{% extends 'basedashboard.html.twig' %}
+
+{% block body %}
+
+
+
+<section class="light-content our-team">
+		{% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <div class="alert-{{ label }} message-flash">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+	
+	<div class="container">
+        
+			<div class="row">
+            
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">REPERTOIRE</h2> 
+						<a href="{{ path('contact_add') }}" class="large-button green-color">Ajouter</a>
+					</div> <!-- /.section-header -->
+				</div> <!-- /.col-md-12 -->
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+
+<table class="table table-hover">
+     <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Métier</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Famille</th>
+            <th scope="col">Modification</th>
+            
+        </tr>
+     </thead>
+     <tbody>
+        {% for contact in contacts %}
+        <tr>
+            <th scope="row">{{contact.name}}</th>
+            <td>{{contact.job}}</td>
+            <td>{{contact.address}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.family}}</td>
+            <td><a href="{{path('contact_edit', {'id': contact.id})}}" class="large-button green-color">Modifier</a></td>
+            
+        </tr>
+         
+        {% endfor %}
+     </tbody>
+    </table>
+
+
+
+</section> <!-- /.our-team -->
+
+{# <div class="">
+    <div>
+        <h1>Liste des Contacts</h1>
+    </div>
+    <a href="{{path('contact_add')}}" class="btn btn-primary">Ajouter un contact</a>
+
+    <table class="table table-hover">
+     <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Job</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Famille</th>
+            <th scope="col">Modification</th>
+        </tr>
+     </thead>
+     <tbody>
+        {% for contact in contacts %}
+        <tr>
+            <th scope="row">{{contact.name}}</th>
+            <td>{{contact.job}}</td>
+            <td>{{contact.address}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.family}}</td>
+            <td><a href="{{path('contact_edit', {'id': contact.id})}}" class="btn btn-primary ">Modifier</a></td>
+        </tr>
+        {% endfor %}
+     </tbody>
+    </table>
+
+    
+</div> #}
+{% endblock %}

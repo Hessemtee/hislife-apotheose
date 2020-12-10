@@ -1,0 +1,82 @@
+{# <div class="row">
+    <h1>Message</h1>
+</div>
+
+<div class="row">
+
+
+    <div class="card col-3">
+        <a href="{{path('grade_browse')}}" class="btn btn-primary">Retour</a>
+    <div class="card-body">
+        <h3 class="card-title">{{ post.title }}</h3>
+        <h4> {{post.content}} </h4>
+
+        
+    </div>
+        <div class="card-btn">
+            <a href="{{ path('post_edit', {'id': post.id}) }}" class="btn btn-primary">Modifier</a>
+            
+        </div>
+    </div>
+{{ include('post/_delete_form.html.twig')}}
+</div> #}
+
+
+{% extends 'basedashboard.html.twig' %}
+
+
+{% block body %}
+
+	<section class="light-content our-team">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">Message</h2>
+						<a href="{{ path('note_add') }}" class="large-button green-color">Ajouter</a>
+					</div>
+					<!-- /.section-header -->
+				</div>
+				<!-- /.col-md-12 -->
+			</div>
+
+			<div class="col-md-8 blog-posts">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="post-blog">
+
+							<div class="blog-content">
+								<h3 class="titre">{{ post.title }}</h3>
+								<span class="meta-date">
+									<a href="#">Le :{{post.createdAt|date('d-m-Y')}}</a>
+								</span>
+								<span class="meta-author">
+									<a href="#">{{post.people.firstname}}</a>
+								</span></br>
+								<h4>{{ post.content }}</h4>
+
+                                <a href="{{ path('post_edit', {'id': post.id}) }}" class="large-button-blanc white-color">
+						<button class="large-button-blanc white-color" type="submit">Modifier</button>
+					</a>
+							</div>
+							<!-- /.blog-content -->
+						</div>
+						<!-- /.post-blog -->
+						
+						<!-- /.blog-image -->
+					</div>
+					<!-- /.col-md-12 -->
+
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.col-md-8 -->
+
+		</div>
+		<!-- /.col-md-4 -->
+
+	</div>
+	<!-- /.row -->
+</div>
+<!-- /.container -->{% endblock %}

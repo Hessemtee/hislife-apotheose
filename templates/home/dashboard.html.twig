@@ -1,0 +1,139 @@
+{% extends 'basedashboard.html.twig' %}
+
+{% block body %}
+
+
+				<section class="light-content our-team">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-header">
+						<h2 class="section-title">TABLEAU DE BORD</h2> 
+					{% if families is defined %}
+					<div class="form-group">
+						<select class="custom-select" id="selectType">
+					{% for family in families %}
+							{% if family.children is defined %}
+							{% for child in family.children %}
+							<option value="{{child.id}}">{{child.firstname}}</option>
+							{% endfor %}
+							{% endif %}
+					{% endfor %}
+						</select>
+					{% endif %}
+					</div>  
+					<!-- /.section-header -->
+				</div>
+				<!-- /.col-md-12 -->
+			</div>
+			<!-- /.row -->
+		</div> 
+		<!-- /.container -->
+		<div class="team-members">
+			<div class="container">
+				<div class="row">
+
+					{% for message in app.flashes('success') %}
+						<div class="alert alert-success">
+							{{ message }}
+						</div>
+					{% endfor %}
+					{% for message in app.flashes('danger') %}
+						<div class="alert alert-danger">
+							{{ message }}
+						</div>
+					{% endfor %}
+
+					<div class="col-md-6 col-sm-12 center-block">
+						<div class="team-member">
+							<div class="member-content">
+								<a href="{{ path('evenement_index') }}"><h4 class="member-name">Calendrier</h4></a></br>
+								    <h5 class="titre"> Posté le: </h5>
+									<p> <span id="selectedChildLastEvent_lastPost"></span></br></br>
+									<h5 class="titre"> Titre: </h5>
+									<p> <span id="selectedChildLastEvent_name"></span></p></br>
+									<h5 class="titre"> Genre: </h5>
+									<p> <span id="selectedChildLastEvent_type"></p><br>
+									<h5 class="titre"> Début de l'événement: </h5>
+									<p> <span id="selectedChildLastEvent_beginAt"></p></br>
+									<h5 class="titre">Fin de l'événement:   </h5>
+									<p> <span id="selectedChildLastEvent_endAt"></p></br>
+							</div>
+							<div class="thumb-post">
+								<img id="selectedChildLastEvent_img" src="" alt="">
+							</div>
+						</div>
+						<!-- /.team-member -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-6 col-sm-12 center-block">
+						<div class="team-member">
+							<div class="member-content">
+								<h4 class="member-name">Vie Scolaire</h4>
+								<h5 class="titre"> Posté le: </h5>
+								<p> <span id="selectedChildSchoolEvent_lastPost"></span></p>
+								<h5 class="titre"> Titre: </h5>
+								<p> <span id="selectedChildSchoolEvent_name"></span></p>
+								
+								
+							</div>
+							<div class="thumb-post">
+								<a id="selectedChildSchoolEvent_detail" href=""><img id="selectedChildSchoolEvent_img" src="{{ asset('assets/images/ecoleprimaire.jpg') }}" alt=""></a>
+							</div>
+						</div>
+						<!-- /.team-member -->
+					</div>
+					<!-- /.col-md-4 -->
+				</div>
+				<!-- /.row -->
+				<div class="row">
+
+					<div class="col-md-6 col-sm-12 center-block">
+						<div class="team-member">
+							<div class="member-content">
+								<h4 class="member-name">Galerie Photo</h4>
+								    <h5 class="titre"> Posté le: </h5>
+									<p><span id="selectedChildLastFamilyPicture_lastPost"></span></h6></br>
+									<h5 class="titre"> Titre: </h5>
+									<p><span id="selectedChildLastFamilyPicture_title"></span></p>
+									
+							</div>
+							<div class="thumb-post">
+								<a href="{{ path('picture')}}"><img id="selectedChildLastFamilyPicture_img" src="assets/images/includes/member3.jpg" alt=""></a>
+							</div>
+						</div>
+						<!-- /.team-member -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-6 col-sm-12 center-block">
+						<div class="team-member">
+							<div class="member-content">
+								<h4 class="member-name">Santé</h4>
+								<h5 class="titre"> Posté le: </h5>
+								<h6><span id="selectedChildHealthEvent"></span></h6></br>
+								<h5 class="titre"> Titre: </h5>
+								<p> <span id="selectedChildHealthEvent_name"></span></p>
+								
+							</div>
+							<div class="thumb-post">
+								<a href="{{ path('healthbook_browse')}}"><img id="selectedChildHealthEvent_img" src="{{ asset('assets/images/sante.jpg') }}" alt=""></a>
+							</div>
+						</div>
+						<!-- /.team-member -->
+					</div>
+					<!-- /.col-md-4 -->
+					
+
+				</div>
+				<!-- /.row -->
+
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.team-members -->
+	</section>
+	<!-- /.our-team -->
+
+{% endblock %}
